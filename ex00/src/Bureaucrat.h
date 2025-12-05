@@ -1,0 +1,24 @@
+#ifndef BUREAUCRAT_H
+# define BUREAUCRAT_H
+
+# include <string>
+# include <iostream>
+
+class Bureaucrat {
+public:
+	Bureaucrat();
+	Bureaucrat(std::string name, int grade);
+	Bureaucrat(const Bureaucrat& src);
+	~Bureaucrat();
+	Bureaucrat& operator=(const Bureaucrat& src);
+	std::string operator<<(const Bureaucrat& src);
+	std::string getName() const;
+	int			getGrade() const;
+private:
+	const std::string m_name;
+	int m_grade;
+};
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& src);
+
+#endif
