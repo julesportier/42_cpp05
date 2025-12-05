@@ -14,6 +14,15 @@ public:
 	std::string operator<<(const Bureaucrat& src);
 	std::string getName() const;
 	int			getGrade() const;
+	// Exceptions subclasses
+	class GradeTooHighException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
+	class GradeTooLowException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
 private:
 	const std::string m_name;
 	int m_grade;

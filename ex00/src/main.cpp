@@ -17,5 +17,34 @@ int	main(void)
 	a = j;
 	printBold("\nCopy constructor");
 	Bureaucrat b(j);
+	printBold("\nException too low");
+	try {
+		Bureaucrat l0("Min", 150);
+	} catch (std::exception& e) {
+		std::cout << e.what() << '\n';
+	}
+	try {
+		Bureaucrat l1("Low", 151);
+	} catch (std::exception& e) {
+		std::cout << e.what() << '\n';
+	}
+	printBold("\nException too high");
+	try {
+		Bureaucrat l1("Max", 1);
+	} catch (std::exception& e) {
+		std::cout << e.what() << '\n';
+	}
+	try {
+		Bureaucrat l0("Low", 0);
+	} catch (std::exception& e) {
+		std::cout << e.what() << '\n';
+	}
+	try {
+		Bureaucrat lneg("Low", -9200);
+	} catch (std::exception& e) {
+		std::cout << e.what() << '\n';
+	}
+
+	printBold("\nAuto cleaning stage");
 	return (0);
 }
