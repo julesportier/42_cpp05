@@ -8,40 +8,77 @@ static void printBold(std::string str)
 int	main(void)
 {
 	printBold("Full constructor");
-	Bureaucrat j("Janine", 123);
+	Bureaucrat j("Janine", 149);
 	std::cout << j << '\n';
+
 	printBold("\nDefault constructor");
 	Bureaucrat a;
 	std::cout << a << '\n';
+
 	printBold("\nAssignement operator");
 	a = j;
+	std::cout << a << '\n';
+
 	printBold("\nCopy constructor");
 	Bureaucrat b(j);
+	std::cout << b << '\n';
+
 	printBold("\nException too low");
 	try {
 		Bureaucrat l0("Min", 150);
-	} catch (std::exception& e) {
+	}
+	catch (std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 	try {
 		Bureaucrat l1("Low", 151);
-	} catch (std::exception& e) {
+	}
+	catch (std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
+
 	printBold("\nException too high");
 	try {
 		Bureaucrat l1("Max", 1);
-	} catch (std::exception& e) {
+	}
+	catch (std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 	try {
 		Bureaucrat l0("Low", 0);
-	} catch (std::exception& e) {
+	}
+	catch (std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 	try {
 		Bureaucrat lneg("Low", -9200);
-	} catch (std::exception& e) {
+	}
+	catch (std::exception& e) {
+		std::cout << e.what() << '\n';
+	}
+
+	printBold("\nDecrement grade");
+	std::cout << j << '\n';
+	j.decrementGrade();
+	std::cout << j << '\n';
+	try {
+		j.decrementGrade();
+		std::cout << j << '\n';
+	}
+	catch (std::exception& e) {
+		std::cout << e.what() << '\n';
+	}
+
+	printBold("\nIncrement grade");
+	Bureaucrat d("Didier", 2);
+	std::cout << d << '\n';
+	d.incrementGrade();
+	std::cout << d << '\n';
+	try {
+		d.incrementGrade();
+		std::cout << d << '\n';
+	}
+	catch (std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 

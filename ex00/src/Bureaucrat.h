@@ -3,6 +3,7 @@
 
 # include <string>
 # include <iostream>
+# include <exception>
 
 class Bureaucrat {
 public:
@@ -14,6 +15,8 @@ public:
 	std::string operator<<(const Bureaucrat& src);
 	std::string getName() const;
 	int			getGrade() const;
+	void		incrementGrade();
+	void		decrementGrade();
 	// Exceptions subclasses
 	class GradeTooHighException : public std::exception {
 	public:

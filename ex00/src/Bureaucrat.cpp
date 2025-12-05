@@ -19,7 +19,8 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 	if (m_grade > 150) {
 		m_grade = -1;
 		throw GradeTooLowException();
-	} else if (m_grade < 1) {
+	}
+	else if (m_grade < 1) {
 		m_grade = -1;
 		throw GradeTooHighException();
 	}
@@ -32,10 +33,12 @@ Bureaucrat::Bureaucrat(const Bureaucrat& src)
 	if (src.m_grade > 150) {
 		m_grade = -1;
 		throw GradeTooLowException();
-	} else if (src.m_grade < 1) {
+	}
+	else if (src.m_grade < 1) {
 		m_grade = -1;
 		throw GradeTooHighException();
-	} else {
+	}
+	else {
 		m_grade = src.m_grade;
 	}
 }
@@ -72,6 +75,35 @@ std::string Bureaucrat::getName() const
 int	Bureaucrat::getGrade() const
 {
 	return (m_grade);
+}
+
+/**********
+* METHODS *
+**********/
+void	Bureaucrat::incrementGrade()
+{
+	if (m_grade <= 1) {
+		m_grade = -1;
+		throw GradeTooHighException();
+	}
+	else {
+		--m_grade;
+	}
+}
+
+void	Bureaucrat::decrementGrade()
+{
+	if (m_grade >= 150) {
+		m_grade = -1;
+		throw GradeTooLowException();
+	}
+	else if (m_grade < 1) {
+		m_grade = -1;
+		throw GradeTooHighException();
+	}
+	else {
+		++m_grade;
+	}
 }
 
 /*************
