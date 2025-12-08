@@ -53,10 +53,10 @@ Form& Form::operator=(const Form& src)
 
 std::ostream& operator<<(std::ostream& os, const Form& src)
 {
-	os << "Form: " << src.getName();
-	src.getSignedStatus() ? os << "\nsigned: yes" : os << "\nsigned: no";
-	os << "\ngrade to sign: " << src.getGradeToSign();
-	os << "\ngrade to execute: " << src.getGradeToExecute();
+	os << "Form: " << src.getName() << " ; ";
+	src.getSignedStatus() ? os << "signed: yes" : os << "signed: no";
+	os << " ; grade to sign: " << src.getGradeToSign();
+	os << " ; grade to execute: " << src.getGradeToExecute();
 	return (os);
 }
 
