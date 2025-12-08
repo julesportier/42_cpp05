@@ -45,7 +45,7 @@ dbg: all
 asan: CXXFLAGS = $(CXXFLAGS_AS)
 asan: CXX = clang++
 asan: all
-usan: CXXFLAGS = $(CXXFLAGS_MUS)
+usan: CXXFLAGS = $(CXXFLAGS_US)
 usan: CXX = clang++
 usan: all
 
