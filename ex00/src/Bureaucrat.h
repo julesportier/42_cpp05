@@ -13,6 +13,7 @@ public:
 	Bureaucrat(const Bureaucrat& src);
 	~Bureaucrat();
 	Bureaucrat& operator=(const Bureaucrat& src);
+
 	std::string getName() const;
 	int			getGrade() const;
 	void		incrementGrade();
