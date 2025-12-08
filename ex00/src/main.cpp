@@ -27,13 +27,13 @@ int	main(void)
 	try {
 		Bureaucrat l0("Min", 150);
 	}
-	catch (std::exception& e) {
+	catch (const std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 	try {
 		Bureaucrat l1("Low", 151);
 	}
-	catch (std::exception& e) {
+	catch (const std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 
@@ -41,19 +41,19 @@ int	main(void)
 	try {
 		Bureaucrat l1("Max", 1);
 	}
-	catch (std::exception& e) {
+	catch (const std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 	try {
 		Bureaucrat l0("Low", 0);
 	}
-	catch (std::exception& e) {
+	catch (const std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 	try {
 		Bureaucrat lneg("Low", -9200);
 	}
-	catch (std::exception& e) {
+	catch (const std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 
@@ -65,7 +65,7 @@ int	main(void)
 		j.decrementGrade();
 		std::cout << j << '\n';
 	}
-	catch (std::exception& e) {
+	catch (const std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 
@@ -78,7 +78,7 @@ int	main(void)
 		d.incrementGrade();
 		std::cout << d << '\n';
 	}
-	catch (std::exception& e) {
+	catch (const std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
 
