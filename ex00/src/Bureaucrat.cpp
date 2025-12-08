@@ -17,30 +17,18 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 {
 	std::cout << "Bureaucrat constructor called\n";
 	if (m_grade > 150) {
-		m_grade = -1;
 		throw GradeTooLowException();
 	}
 	else if (m_grade < 1) {
-		m_grade = -1;
 		throw GradeTooHighException();
 	}
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src)
 	: m_name(src.m_name)
+	, m_grade(src.m_grade)
 {
 	std::cout << "Bureaucrat copy constructor called\n";
-	if (src.m_grade > 150) {
-		m_grade = -1;
-		throw GradeTooLowException();
-	}
-	else if (src.m_grade < 1) {
-		m_grade = -1;
-		throw GradeTooHighException();
-	}
-	else {
-		m_grade = src.m_grade;
-	}
 }
 
 Bureaucrat::~Bureaucrat()
@@ -82,27 +70,17 @@ int	Bureaucrat::getGrade() const
 **********/
 void	Bureaucrat::incrementGrade()
 {
-	if (m_grade <= 1) {
-		m_grade = -1;
+	--m_grade;
+	if (m_grade < 1) {
 		throw GradeTooHighException();
-	}
-	else {
-		--m_grade;
 	}
 }
 
 void	Bureaucrat::decrementGrade()
 {
-	if (m_grade >= 150) {
-		m_grade = -1;
+	++m_grade;
+	if (m_grade > 150) {
 		throw GradeTooLowException();
-	}
-	else if (m_grade < 1) {
-		m_grade = -1;
-		throw GradeTooHighException();
-	}
-	else {
-		++m_grade;
 	}
 }
 
