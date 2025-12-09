@@ -69,7 +69,7 @@ int	Bureaucrat::getGrade() const
 /**********
 * METHODS *
 **********/
-void	Bureaucrat::incrementGrade()
+void Bureaucrat::incrementGrade()
 {
 	--m_grade;
 	if (m_grade < 1) {
@@ -77,7 +77,7 @@ void	Bureaucrat::incrementGrade()
 	}
 }
 
-void	Bureaucrat::decrementGrade()
+void Bureaucrat::decrementGrade()
 {
 	++m_grade;
 	if (m_grade > 150) {
@@ -85,13 +85,15 @@ void	Bureaucrat::decrementGrade()
 	}
 }
 
-bool	Bureaucrat::signForm(Form& form) const
+bool Bureaucrat::signForm(Form& form) const
 {
 	try {
 		form.beSigned(*this);
 	}
 	catch (const std::exception& e) {
-		std::cout << m_name << " couldn’t sign " << form.getName() << " because " << e.what() << ".\n";
+		std::cout
+			<< m_name << " couldn’t sign " << form.getName()
+			<< " because " << e.what() << ".\n";
 		return (false);
 	}
 	std::cout << m_name << " signed " << form.getName() << '\n';

@@ -17,10 +17,10 @@ public:
 	Bureaucrat& operator=(const Bureaucrat& src);
 
 	std::string getName() const;
-	int			getGrade() const;
-	void		incrementGrade();
-	void		decrementGrade();
-	bool		signForm(Form& form) const;
+	int getGrade() const;
+	void incrementGrade();
+	void decrementGrade();
+	bool signForm(Form& form) const;
 
 	// Exceptions subclasses
 	class GradeTooHighException : public std::exception {

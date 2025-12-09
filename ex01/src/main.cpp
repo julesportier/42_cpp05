@@ -6,7 +6,7 @@ static void printBold(std::string str)
 	std::cout << "\e[1m" << str << "\e[0m\n";
 }
 
-int	main(void)
+int main(void)
 {
 	printBold("###########\nBUREAUCRAT:\n###########");
 	printBold("Full constructor");

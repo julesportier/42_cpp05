@@ -60,7 +60,7 @@ std::string Bureaucrat::getName() const
 	return (m_name);
 }
 
-int	Bureaucrat::getGrade() const
+int Bureaucrat::getGrade() const
 {
 	return (m_grade);
 }
@@ -68,7 +68,7 @@ int	Bureaucrat::getGrade() const
 /**********
 * METHODS *
 **********/
-void	Bureaucrat::incrementGrade()
+void Bureaucrat::incrementGrade()
 {
 	--m_grade;
 	if (m_grade < 1) {
@@ -76,7 +76,7 @@ void	Bureaucrat::incrementGrade()
 	}
 }
 
-void	Bureaucrat::decrementGrade()
+void Bureaucrat::decrementGrade()
 {
 	++m_grade;
 	if (m_grade > 150) {
