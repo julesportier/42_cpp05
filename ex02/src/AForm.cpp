@@ -107,10 +107,10 @@ void AForm::checkExecRights(const Bureaucrat& executor) const
 *************/
 const char* AForm::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high");
+	return ("Error: grade is too high");
 }
 
 const char* AForm::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low");
+	return ("Error: grade is too low");
 }

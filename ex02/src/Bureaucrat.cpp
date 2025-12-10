@@ -105,10 +105,10 @@ bool Bureaucrat::signForm(AForm& form) const
 *************/
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high");
+	return ("Error: grade is too high");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low");
+	return ("Error: grade is too low");
 }
