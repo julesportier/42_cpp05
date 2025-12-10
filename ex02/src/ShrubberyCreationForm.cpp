@@ -47,13 +47,10 @@ static int putStrInFile(std::string tree, std::string target);
 
 void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
-	if (executor.getGrade() <= this->getGradeToExecute()) {
-		if (putStrInFile(generateTree(), m_target) == -1) {
-			throw std::ios_base::failure("Error trying to open file");
-		}
+	checkExecRights(executor);
+	if (putStrInFile(generateTree(), m_target) == -1) {
+		throw std::ios_base::failure("Error: file operation failed");
 	}
-	else
-		throw AForm::GradeTooLowException();
 }
 
 static std::string generateTree()

@@ -96,6 +96,12 @@ void AForm::beSigned(const Bureaucrat& signatory)
 	}
 }
 
+void AForm::checkExecRights(const Bureaucrat& executor) const
+{
+	if (executor.getGrade() > m_gradeToExecute)
+		throw AForm::GradeTooLowException();
+}
+
 /*************
 * EXCEPTIONS *
 *************/

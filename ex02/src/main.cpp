@@ -105,6 +105,8 @@ int main(void)
 	try {
 		ShrubberyCreationForm p("garden");
 		p.execute(d);
+		Bureaucrat d("Didier", 142);
+		p.execute(d);
 	}
 	catch (const std::exception& e) {
 		std::cout << e.what() << '\n';

@@ -21,6 +21,7 @@ public:
 	int getGradeToExecute() const;
 
 	void beSigned(const Bureaucrat& signatory);
+	void checkExecRights(const Bureaucrat& executor) const;
 	virtual void execute(const Bureaucrat& executor) const = 0;
 
 	// Exceptions subclasses
