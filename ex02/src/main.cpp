@@ -1,4 +1,5 @@
 #include "Bureaucrat.h"
+#include "RobotomyRequestForm.h"
 #include "ShrubberyCreationForm.h"
 
 static void printBold(std::string str)
@@ -106,11 +107,24 @@ int main(void)
 	printBold("\n#####\nShrubberyCreationForm:\n#####");
 	printBold("Full constructor");
 	try {
-		ShrubberyCreationForm p("garden");
-		std::cout << p << '\n';
-		p.execute(d);
+		ShrubberyCreationForm f("garden");
+		std::cout << f << '\n';
 		Bureaucrat d("Didier", 142);
-		p.execute(d);
+		d.signForm(f);
+		f.execute(d);
+	}
+	catch (const std::exception& e) {
+		std::cout << "Error: " << e.what() << '\n';
+	}
+
+	printBold("\n#####\nRobotomyRequestForm:\n#####");
+	printBold("Full constructor");
+	try {
+		RobotomyRequestForm f("cellar");
+		std::cout << f << '\n';
+		Bureaucrat a("Alice", 45);
+		a.signForm(f);
+		f.execute(a);
 	}
 	catch (const std::exception& e) {
 		std::cout << "Error: " << e.what() << '\n';

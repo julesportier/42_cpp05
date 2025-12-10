@@ -27,7 +27,8 @@ vpath %.cpp $(SRC_DIR)
 SRC :=	main.cpp \
 		Bureaucrat.cpp \
 		AForm.cpp \
-		ShrubberyCreationForm.cpp
+		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp
 
 BUILD_DIR := build
 OBJ := $(SRC:%.cpp=$(BUILD_DIR)/%.o)
