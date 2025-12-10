@@ -113,6 +113,8 @@ void AForm::checkExecRights(const Bureaucrat& executor) const
 {
 	if (executor.getGrade() > m_gradeToExecute)
 		throw AForm::GradeTooLowException();
+	if (m_signed == false)
+		throw AForm::UnsignedFormException();
 }
 
 /*************
@@ -126,4 +128,9 @@ const char* AForm::GradeTooHighException::what() const throw()
 const char* AForm::GradeTooLowException::what() const throw()
 {
 	return ("Error: grade is too low");
+}
+
+const char* AForm::UnsignedFormException::what() const throw()
+{
+	return ("Error: form is unsigned");
 }

@@ -97,6 +97,7 @@ int main(void)
 	std::cout << p << '\n';
 	ShrubberyCreationForm fp("garden");
 	std::cout << fp << '\n';
+	p.executeForm(fp);
 	p.signForm(fp);
 	p.executeForm(fp);
 	std::cout << fp << '\n';
@@ -114,7 +115,6 @@ int main(void)
 	catch (const std::exception& e) {
 		std::cout << e.what() << '\n';
 	}
-
 
 
 	printBold("\nAuto cleaning stage");

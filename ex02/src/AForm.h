@@ -38,6 +38,9 @@ public:
 	public:
 		const char* what() const throw();
 	};
+	class UnsignedFormException : public std::exception {
+		const char* what() const throw();
+	};
 
 private:
 	const std::string m_name;
