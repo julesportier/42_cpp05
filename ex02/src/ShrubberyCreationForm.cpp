@@ -11,8 +11,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm::AForm()
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-	: AForm::AForm("ShrubberyForm", 145, 137)
-	, m_target(target)
+	: AForm::AForm("ShrubberyForm", 145, 137, target)
 {
 	std::cout << "ShrubberyCreationForm constructor called\n";
 }
@@ -48,7 +47,7 @@ static int putStrInFile(std::string tree, std::string target);
 void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
 	checkExecRights(executor);
-	if (putStrInFile(generateTree(), m_target) == -1) {
+	if (putStrInFile(generateTree(), getTarget()) == -1) {
 		throw std::ios_base::failure("Error: file operation failed");
 	}
 }

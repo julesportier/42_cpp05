@@ -8,15 +8,21 @@ AForm::AForm()
 	, m_signed(false)
 	, m_gradeToSign(150)
 	, m_gradeToExecute(150)
+	, m_target("default")
 {
 	std::cout << "AForm default constructor called\n";
 }
 
-AForm::AForm(std::string name, const int gradeToSign, const int gradeToExecute)
+AForm::AForm(
+		const std::string name,
+		const int gradeToSign,
+		const int gradeToExecute,
+		const std::string target)
 	: m_name(name)
 	, m_signed(false)
 	, m_gradeToSign(gradeToSign)
 	, m_gradeToExecute(gradeToExecute)
+	, m_target(target)
 {
 	std::cout << "AForm constructor called\n";
 	if (m_gradeToSign > 150 || m_gradeToExecute > 150) {
@@ -32,6 +38,7 @@ AForm::AForm(const AForm& src)
 	, m_signed(src.m_signed)
 	, m_gradeToSign(src.m_gradeToSign)
 	, m_gradeToExecute(src.m_gradeToExecute)
+	, m_target(src.m_target)
 {
 	std::cout << "AForm copy constructor called\n";
 }
@@ -53,10 +60,11 @@ AForm& AForm::operator=(const AForm& src)
 
 std::ostream& operator<<(std::ostream& os, const AForm& src)
 {
-	os << "AForm: " << src.getName() << " ; ";
+	os << "Form: " << src.getName() << " ; ";
 	src.getSignedStatus() ? os << "signed: yes" : os << "signed: no";
 	os << " ; grade to sign: " << src.getGradeToSign();
 	os << " ; grade to execute: " << src.getGradeToExecute();
+	os << " ; target: " << src.getTarget();
 	return (os);
 }
 
@@ -81,6 +89,11 @@ int AForm::getGradeToSign() const
 int AForm::getGradeToExecute() const
 {
 	return (m_gradeToExecute);
+}
+
+std::string AForm::getTarget() const
+{
+	return (m_target);
 }
 
 /**********

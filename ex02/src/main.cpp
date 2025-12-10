@@ -104,6 +104,7 @@ int main(void)
 	printBold("Full constructor");
 	try {
 		ShrubberyCreationForm p("garden");
+		std::cout << p << '\n';
 		p.execute(d);
 		Bureaucrat d("Didier", 142);
 		p.execute(d);

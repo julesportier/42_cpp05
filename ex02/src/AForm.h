@@ -10,7 +10,11 @@ class AForm {
 
 public:
 	AForm();
-	AForm(std::string name, const int gradeToSign, const int gradeToExecute);
+	AForm(
+		const std::string name,
+		const int gradeToSign,
+		const int gradeToExecute,
+		const std::string target);
 	AForm(const AForm& src);
 	AForm& operator=(const AForm& src);
 	virtual ~AForm();
@@ -19,6 +23,7 @@ public:
 	bool getSignedStatus() const;
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
+	std::string getTarget() const;
 
 	void beSigned(const Bureaucrat& signatory);
 	void checkExecRights(const Bureaucrat& executor) const;
@@ -39,6 +44,7 @@ private:
 	bool m_signed;
 	const int m_gradeToSign;
 	const int m_gradeToExecute;
+	const std::string m_target;
 
 };
 
