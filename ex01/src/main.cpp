@@ -30,13 +30,13 @@ int main(void)
 		Bureaucrat l0("Min", 150);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	try {
 		Bureaucrat l1("Low", 151);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nException too high");
@@ -44,19 +44,19 @@ int main(void)
 		Bureaucrat l1("Max", 1);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	try {
 		Bureaucrat l0("Low", 0);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	try {
 		Bureaucrat lneg("Low", -9200);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nDecrement grade");
@@ -68,7 +68,7 @@ int main(void)
 		std::cout << j << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nIncrement grade");
@@ -81,7 +81,7 @@ int main(void)
 		std::cout << d << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nsignForm()");
@@ -96,7 +96,7 @@ int main(void)
 	std::cout << p << '\n';
 	Form fp("b82h405", 140, 100);
 	std::cout << fp << '\n';
-	b.signForm(fp);
+	p.signForm(fp);
 	std::cout << fp << '\n';
 
 	printBold("\n#####\nFORM:\n#####");
@@ -122,7 +122,7 @@ int main(void)
 		std::cout << fl << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	std::cout << '\n';
 	try {
@@ -130,7 +130,7 @@ int main(void)
 		std::cout << fl << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	std::cout << '\n';
 	try {
@@ -138,7 +138,7 @@ int main(void)
 		std::cout << fl << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nException too high");
@@ -147,7 +147,7 @@ int main(void)
 		std::cout << fh << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	std::cout << '\n';
 	try {
@@ -155,7 +155,7 @@ int main(void)
 		std::cout << fh << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	std::cout << '\n';
 	try {
@@ -163,7 +163,7 @@ int main(void)
 		std::cout << fh << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	std::cout << '\n';
 	try {
@@ -171,7 +171,7 @@ int main(void)
 		std::cout << fh << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	std::cout << '\n';
 	try {
@@ -179,7 +179,7 @@ int main(void)
 		std::cout << fh << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nbeSigned()");
@@ -192,7 +192,7 @@ int main(void)
 		std::cout << f << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	std::cout << '\n';
 	try {
@@ -204,7 +204,7 @@ int main(void)
 		std::cout << f << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nAuto cleaning stage");

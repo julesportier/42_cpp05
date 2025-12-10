@@ -30,13 +30,13 @@ int main(void)
 		Bureaucrat l0("Min", 150);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	try {
 		Bureaucrat l1("Low", 151);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nException too high");
@@ -44,19 +44,19 @@ int main(void)
 		Bureaucrat l1("Max", 1);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	try {
 		Bureaucrat l0("Low", 0);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 	try {
 		Bureaucrat lneg("Low", -9200);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nDecrement grade");
@@ -68,7 +68,7 @@ int main(void)
 		std::cout << j << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nIncrement grade");
@@ -81,7 +81,7 @@ int main(void)
 		std::cout << d << '\n';
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 	printBold("\nsignForm() & executeForm()");
@@ -113,7 +113,7 @@ int main(void)
 		p.execute(d);
 	}
 	catch (const std::exception& e) {
-		std::cout << e.what() << '\n';
+		std::cout << "Error: " << e.what() << '\n';
 	}
 
 

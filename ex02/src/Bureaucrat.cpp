@@ -120,10 +120,10 @@ int Bureaucrat::executeForm(const AForm& form) const
 *************/
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Error: grade is too high");
+	return ("grade is too high");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Error: grade is too low");
+	return ("grade is too low");
 }

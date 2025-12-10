@@ -48,7 +48,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
 	checkExecRights(executor);
 	if (putStrInFile(generateTree(), getTarget()) == -1) {
-		throw std::ios_base::failure("Error: file operation failed");
+		throw std::ios_base::failure("file operation failed");
 	}
 }
 
