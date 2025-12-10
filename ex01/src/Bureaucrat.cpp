@@ -85,7 +85,7 @@ void Bureaucrat::decrementGrade()
 	}
 }
 
-bool Bureaucrat::signForm(Form& form) const
+int Bureaucrat::signForm(Form& form) const
 {
 	try {
 		form.beSigned(*this);
@@ -94,10 +94,10 @@ bool Bureaucrat::signForm(Form& form) const
 		std::cout
 			<< m_name << " couldn’t sign " << form.getName()
 			<< " because " << e.what() << ".\n";
-		return (false);
+		return (-1);
 	}
 	std::cout << m_name << " signed " << form.getName() << '\n';
-	return (true);
+	return (0);
 }
 
 /*************

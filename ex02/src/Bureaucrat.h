@@ -20,7 +20,7 @@ public:
 	int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
-	bool signForm(AForm& form) const;
+	int signForm(AForm& form) const;
 
 	// Exceptions subclasses
 	class GradeTooHighException : public std::exception {
