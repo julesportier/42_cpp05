@@ -21,6 +21,7 @@ public:
 	void incrementGrade();
 	void decrementGrade();
 	int signForm(AForm& form) const;
+	int executeForm(const AForm& form) const;
 
 	// Exceptions subclasses
 	class GradeTooHighException : public std::exception {

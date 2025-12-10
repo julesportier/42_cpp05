@@ -97,7 +97,22 @@ int Bureaucrat::signForm(AForm& form) const
 		return (-1);
 	}
 	std::cout << m_name << " signed " << form.getName() << '\n';
-	return (true);
+	return (0);
+}
+
+int Bureaucrat::executeForm(const AForm& form) const
+{
+	try {
+		form.execute(*this);
+	}
+	catch (const std::exception& e) {
+		std::cout
+			<< m_name << " couldn’t execute " << form.getName()
+			<< " because " << e.what() << ".\n";
+		return (-1);
+	}
+	std::cout << m_name << " executed " << form.getName() << '\n';
+	return (0);
 }
 
 /*************

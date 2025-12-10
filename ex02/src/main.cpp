@@ -84,20 +84,22 @@ int main(void)
 		std::cout << e.what() << '\n';
 	}
 
-	// printBold("\nsignForm()");
-	// Bureaucrat m("Mary", 140);
-	// std::cout << m << '\n';
-	// Form fb("b82h405", 140, 100);
-	// std::cout << fb << '\n';
-	// m.signForm(fb);
-	// std::cout << fb << '\n';
-	// std::cout << '\n';
-	// Bureaucrat p("Paul", 141);
-	// std::cout << p << '\n';
-	// Form fp("b82h405", 140, 100);
-	// std::cout << fp << '\n';
-	// b.signForm(fp);
-	// std::cout << fp << '\n';
+	printBold("\nsignForm() & executeForm()");
+	Bureaucrat m("Mary", 140);
+	std::cout << m << '\n';
+	ShrubberyCreationForm fb("garden");
+	std::cout << fb << '\n';
+	m.signForm(fb);
+	m.executeForm(fb);
+	std::cout << fb << '\n';
+	std::cout << '\n';
+	Bureaucrat p("Paul", 137);
+	std::cout << p << '\n';
+	ShrubberyCreationForm fp("garden");
+	std::cout << fp << '\n';
+	p.signForm(fp);
+	p.executeForm(fp);
+	std::cout << fp << '\n';
 
 	printBold("\n#####\nFORMS:\n#####");
 	printBold("\n#####\nShrubberyCreationForm:\n#####");
