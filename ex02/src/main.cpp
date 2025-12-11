@@ -110,9 +110,10 @@ int main(void)
 	try {
 		ShrubberyCreationForm f("garden");
 		std::cout << f << '\n';
-		Bureaucrat d("Didier", 142);
+		Bureaucrat d("Didier", 137);
 		d.signForm(f);
 		f.execute(d);
+		d.executeForm(f);
 	}
 	catch (const std::exception& e) {
 		std::cout << "Error: " << e.what() << '\n';
@@ -126,6 +127,7 @@ int main(void)
 		Bureaucrat a("Alice", 45);
 		a.signForm(f);
 		f.execute(a);
+		a.executeForm(f);
 	}
 	catch (const std::exception& e) {
 		std::cout << "Error: " << e.what() << '\n';
@@ -139,8 +141,10 @@ int main(void)
 		Bureaucrat z("Zaphold", 5);
 		z.signForm(d);
 		d.execute(z);
+		z.executeForm(d);
 		Bureaucrat di("Didier", 142);
 		d.execute(di);
+		di.executeForm(d);
 	}
 	catch (const std::exception& e) {
 		std::cout << "Error: " << e.what() << '\n';

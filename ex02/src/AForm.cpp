@@ -14,10 +14,10 @@ AForm::AForm()
 }
 
 AForm::AForm(
-		const std::string name,
-		const int gradeToSign,
-		const int gradeToExecute,
-		const std::string target)
+		std::string name,
+		int gradeToSign,
+		int gradeToExecute,
+		std::string target)
 	: m_name(name)
 	, m_signed(false)
 	, m_gradeToSign(gradeToSign)

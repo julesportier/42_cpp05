@@ -89,6 +89,8 @@ int Bureaucrat::signForm(Form& form) const
 {
 	try {
 		form.beSigned(*this);
+		std::cout << m_name << " signed " << form.getName() << '\n';
+		return (0);
 	}
 	catch (const std::exception& e) {
 		std::cout
@@ -96,8 +98,6 @@ int Bureaucrat::signForm(Form& form) const
 			<< " because " << e.what() << ".\n";
 		return (-1);
 	}
-	std::cout << m_name << " signed " << form.getName() << '\n';
-	return (0);
 }
 
 /*************

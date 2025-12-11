@@ -10,10 +10,7 @@ class Form {
 
 public:
 	Form();
-	Form(
-		const std::string name,
-		const int gradeToSign,
-		const int gradeToExecute);
+	Form(std::string name, int gradeToSign, int gradeToExecute);
 	Form(const Form& src);
 	Form& operator=(const Form& src);
 	~Form();

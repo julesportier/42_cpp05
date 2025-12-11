@@ -12,10 +12,7 @@ Form::Form()
 	std::cout << "Form default constructor called\n";
 }
 
-Form::Form(
-		const std::string name,
-		const int gradeToSign,
-		const int gradeToExecute)
+Form::Form(std::string name, int gradeToSign, int gradeToExecute)
 	: m_name(name)
 	, m_signed(false)
 	, m_gradeToSign(gradeToSign)
