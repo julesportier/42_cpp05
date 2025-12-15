@@ -11,7 +11,7 @@ public:
 	~Intern();
 	Intern& operator=(const Intern& src);
 
-	AForm* makeForm(std::string name, std::string target);
+	AForm* makeForm(std::string name, std::string target) const;
 
 private:
 	AForm* makeShruberryCreation(std::string target) const;

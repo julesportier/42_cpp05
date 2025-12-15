@@ -25,21 +25,6 @@ Intern& Intern::operator=(const Intern& src)
 /**********
 * METHODS *
 **********/
-AForm* Intern::makeShruberryCreation(std::string target) const
-{
-	return (new ShrubberyCreationForm(target));
-}
-
-AForm* Intern::makeRobotomyRequest(std::string target) const
-{
-	return (new RobotomyRequestForm(target));
-}
-
-AForm* Intern::makePresidentialPardon(std::string target) const
-{
-	return (new PresidentialPardonForm(target));
-}
-
 typedef AForm* (Intern::*formCreationfn)(std::string target) const;
 
 typedef struct s_form_map {
@@ -47,7 +32,7 @@ typedef struct s_form_map {
 	formCreationfn func;
 } form_map;
 
-AForm* Intern::makeForm(std::string name, std::string target)
+AForm* Intern::makeForm(std::string name, std::string target) const
 {
 	static const form_map map[3] = {
 		{"shrubbery creation", &Intern::makeShruberryCreation},
@@ -63,4 +48,20 @@ AForm* Intern::makeForm(std::string name, std::string target)
 	std::cout << "Intern can't create form, name is invalid\n";
 	throw std::invalid_argument("invalid form name");
 	return (NULL);
+}
+
+
+AForm* Intern::makeShruberryCreation(std::string target) const
+{
+	return (new ShrubberyCreationForm(target));
+}
+
+AForm* Intern::makeRobotomyRequest(std::string target) const
+{
+	return (new RobotomyRequestForm(target));
+}
+
+AForm* Intern::makePresidentialPardon(std::string target) const
+{
+	return (new PresidentialPardonForm(target));
 }
